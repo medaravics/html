@@ -1,0 +1,79 @@
+<html>
+<head>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+div.fixed {
+  position: fixed;
+  bottom: 10px;
+  font-size: 2vw;
+  /* border: 3px solid #73AD21;*/
+}
+</style>
+</head>
+<body>
+<div class="fixed">
+<a href="javascript:myFunction(1)">అ-అః</a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:myFunction(2)">క-ఙ</a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:myFunction(3)">చ-ఞ</a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:myFunction(4)">త-న</a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:myFunction(5)">ట-ణ</a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:myFunction(6)">ప-మ</a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:myFunction(7)">య-శ</a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:myFunction(8)">ష-ఱ</a>
+  </div>
+	<p  style="display: flex; /* border-width:3px; border-style:solid; height: 80% ;border-color:#FF0000;*/ font-size: 20vw; width: 100%; justify-content: center; align-items: center;" id="mydiv"> చ</p>
+<script>
+ // అ చ్చు లు
+ const letters1 = ["అ", "ఆ", "ఇ", "ఈ", "ఉ", "ఊ", "ఋ", "ఎ", "ఏ", "ఐ", "ఒ", "ఓ", "ఔ", "అం" , "అః"];
+ const letters2 =  ["క", "ఖ", "గ", "ఘ", "ఙ"];
+ const letters3 =  ["చ", "ఛ", "జ", "ఝ", "ఞ"];
+ const letters4 =  ["ట", "ఠ", "డ", "ఢ", "ణ"];
+ const letters5 =  ["త", "థ", "ద", "ధ", "న"];
+ const letters6 =  ["ప", "ఫ", "బ", "భ", "మ"];
+ const letters7 =  ["య", "ర", "ల", "వ", "శ"];
+ const letters8 =  ["ష", "హ", "ళ", "క్ష", "ఱ"];
+ var arrayLength=5;
+ letters = letters1.slice();
+ function myFunction(myMessage) {
+    // alert(myMessage);
+	switch(myMessage) {
+		case 1:
+			letters = letters1.slice();
+			break;
+		case 2:
+			letters = letters2.slice();
+			break;
+		case 3:
+			letters = letters3.slice();
+			break;
+		case 4:
+			letters = letters4.slice();
+			break;
+		case 5:
+			letters = letters5.slice();
+			break;
+		case 6:
+			letters = letters6.slice();
+			break;
+		case 7:
+			letters = letters7.slice();
+			break;
+		case 8:
+			letters = letters8.slice();
+			break;
+		default:
+			letters = letters1.slice();
+			break;
+
+
+	}
+	arrayLength = letters.length;
+}
+var x = setInterval(function() {
+   
+  var index = Math.floor(Math.random()*arrayLength);
+  document.getElementById("mydiv").innerHTML = letters[index] ;
+}, 3000);
+</script>
+</body>
